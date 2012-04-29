@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+<script type="text/javascript" src="./jquery.js"></script>
+
+<link type="text/css" rel="stylesheet" href="./desbichador.css" />
+<script type="text/javascript" src="./desbichador.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	//<![CDATA[
+	
+		desbichador_init();
+		
+		/*
+		var text = [
+			'hola, esto es una prueba para sacar texto por el desbichador',
+			'la idea sería utilizar esto para debuggear <strong>el</strong> código javascript',
+			'la idea sería utilizar esto para debuggear <strong>el</strong> código javascript',
+			'la idea sería utilizar esto para debuggear <strong>el</strong> código javascript',
+			'la idea sería utilizar esto para debuggear <strong>el</strong> código javascript',
+			'',
+			'vamos a ver si funciona'
+			];
+		for (n=0;n<15;n++) {
+			desbichador(text[n]);
+		}
+		
+		alert ("alert!!!!");
+		*/
+		
+		var mi_objeto = {a:1,b:2,3:'pepe',mx:{aa:'txt',bz:'vamos!!!!!',mx:{aa:'txt',bz:'vamos!!!!!'}}};
+		
+		alert("mi_objeto "+ desbichador_ver({p:mi_objeto}));
+		
+		
+	//]]>	
+});
+</script>
+
+</head>
+
+<body>
+<div id="desbichador">
+	<div id="desbichador_contenido">
+		<div id="desbichador_fondo"></div>
+		<div id="desbichador_activador"></div>
+		<div id="desbichador_panel">
+			<div class="desbichador_variable">(+)</div>
+		</div>
+		<div id="desbichador_salida">
+			<pre>
+			</pre>
+		</div><!-- #desbichador_salida -->
+	</div><!-- #desbichador_contenido -->
+</div><!-- #desbichador -->
+</body>
+
+</html>
