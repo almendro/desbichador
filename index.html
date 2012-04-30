@@ -14,38 +14,39 @@ $(document).ready(function(){
 	
 		desbichador_init();
 		
-		/*
-		var text = [
-			'hola, esto es una prueba para sacar texto por el desbichador',
-			'la idea sería utilizar esto para debuggear <strong>el</strong> código javascript',
-			'la idea sería utilizar esto para debuggear <strong>el</strong> código javascript',
-			'la idea sería utilizar esto para debuggear <strong>el</strong> código javascript',
-			'la idea sería utilizar esto para debuggear <strong>el</strong> código javascript',
-			'',
-			'vamos a ver si funciona'
-			];
-		for (n=0;n<15;n++) {
-			desbichador(text[n]);
+		
+	
+		var mi_teclado = {
+			crtlKey: false,
+			shiftKey: false,
+			altKey: false
 		}
 		
-		alert ("alert!!!!");
-		*/
-		/*
-		var mi_objeto = {a:1,b:2,3:'pepe',mx:{aa:'txt',bz:'vamos!!!!!',mx:{aa:'txt',bz:'vamos!!!!!'}}};
+		trace66 = trace;
+		//trace66 = fnull;
 		
-		alert("mi_objeto "+ desbichador_ver({p:mi_objeto}));
-		*/
+		$('html').keyup(function(e) {
 		
-		var xTriggered = 0;
+			trace66("UP "+e.which);
 
-		$('html').keyup(function(event) {
-			xTriggered++;
-			alert('Handler for .keyup() called ' + xTriggered + ' time(s).');
-			trace(event);
-		}).keydown(function(event) {
-			alert(event.which);
-			if (event.which == 13) {
-				event.preventDefault();
+			if ( e.which == 17 ) mi_teclado.ctrlKey = false; // CONTROL
+			if ( e.which == 16 ) mi_teclado.shiftKey = false; // SHIFT
+			if ( e.which == 18 || e.which == 224 ) mi_teclado.altKey = false; // ALT || ALT+SHIFT
+			
+			
+		}).keydown(function(e) {
+		
+			trace66("ctrlKey "+e.ctrlKey);
+			trace66("shiftKey "+e.shiftKey);
+			trace66("altKey "+e.altKey);
+			
+			trace66("DOWN "+e.which);
+			
+			if ( e.ctrlKey && e.shiftKey && e.altKey && e.which == 68 ) { // mostrar/ocultar: CTRL+SHIFT+ALT+D
+				desbichador_visualizar();
+			}
+			if (e.which == 13) {
+				e.preventDefault();
 			}  
 		});
 

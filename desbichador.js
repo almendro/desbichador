@@ -12,16 +12,22 @@ var desbichador_salida;
 var desbichador_n;
 function desbichador_init(){
 	desbichador_salida = $('#desbichador_salida pre');
+	$desbichador_contenido = $("#desbichador_contenido");
 	desbichador_n = 0;
 	window.alert = trace = desbichador;
 }
 
+function fnull(){};
 
 function desbichador (e){
 	return desbichador_salida.append('<div><span>'+(desbichador_n++)+'</span>'+e+'</div>');
 }
 
 
+function desbichador_visualizar(){
+	var desbichador_visible = $desbichador_contenido.css('visibility') == 'visible' ? 'hidden' : 'visible';
+	$desbichador_contenido.css('visibility',desbichador_visible);
+}
 
 function desbichador_ver(e){
 
