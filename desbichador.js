@@ -18,7 +18,6 @@ function desbichador_init(){
 
 
 function desbichador (e){
-	 
 	return desbichador_salida.append('<div><span>'+(desbichador_n++)+'</span>'+e+'</div>');
 }
 

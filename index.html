@@ -30,12 +30,27 @@ $(document).ready(function(){
 		
 		alert ("alert!!!!");
 		*/
-		
+		/*
 		var mi_objeto = {a:1,b:2,3:'pepe',mx:{aa:'txt',bz:'vamos!!!!!',mx:{aa:'txt',bz:'vamos!!!!!'}}};
 		
 		alert("mi_objeto "+ desbichador_ver({p:mi_objeto}));
+		*/
 		
-		
+		var xTriggered = 0;
+
+		$('html').keyup(function(event) {
+			xTriggered++;
+			alert('Handler for .keyup() called ' + xTriggered + ' time(s).');
+			trace(event);
+		}).keydown(function(event) {
+			alert(event.which);
+			if (event.which == 13) {
+				event.preventDefault();
+			}  
+		});
+
+
+
 	//]]>	
 });
 </script>
